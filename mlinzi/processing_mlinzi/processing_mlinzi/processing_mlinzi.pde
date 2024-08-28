@@ -16,7 +16,7 @@ void setup() {
   
  size (1200, 700); // ***CHANGE THIS TO YOUR SCREEN RESOLUTION***
  smooth();
- myPort = new Serial(this,"COM5", 9600); // starts the serial communication
+ myPort = new Serial(this,"/dev/ttyACM1", 9600); // starts the serial communication
  myPort.bufferUntil('.'); // reads the data from the serial port up to the character '.'. So actually it reads this: angle,distance.
 }
 void draw() {
@@ -109,7 +109,7 @@ void drawText() { // draws the texts on the screen
   text("30cm",width-width*0.177,height-height*0.0833);
   text("40cm",width-width*0.0729,height-height*0.0833);
   textSize(40);
-  text("Hani's Experiments", width-width*0.875, height-height*0.0277);
+  text("Mlinzi Experiments", width-width*0.875, height-height*0.0277);
   text("Angle: " + iAngle +" °", width-width*0.48, height-height*0.0277);
   text("Distance: ", width-width*0.26, height-height*0.0277);
   if(iDistance<40) {
